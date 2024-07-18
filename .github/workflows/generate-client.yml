@@ -1,0 +1,16 @@
+on:
+  schedule:
+    - cron: '0 0 * * *'
+jobs:
+  generate-client:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Generate GoLang client
+        uses: openapi-generators/openapi-generator-action@v1
+        with:
+          generator: go
+          configFile: openapi-generator-config.yaml
+          openapi-url: https://www.macsds.com/redoc.yaml
