@@ -10,8 +10,8 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Generate GoLang client
-        uses: openapi-generators/openapi-generator-action@v1
+        uses: openapi-generators/openapitools-generator-action@v1
         with:
           generator: go
-          configFile: openapi-generator-config.yaml
+          config-file: openapi-generator-config.yaml
           openapi-url: https://www.macsds.com/redoc.yaml
