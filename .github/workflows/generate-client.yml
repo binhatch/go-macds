@@ -15,6 +15,7 @@ jobs:
           generator: go
           config-file: openapi-generator-config.yaml
           openapi-url: https://www.macsds.com/redoc.yaml
+          
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
