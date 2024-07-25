@@ -23,19 +23,19 @@ import (
 // ImageAPIService ImageAPI service
 type ImageAPIService service
 
-type ApiImage1Request struct {
+type ImageAPIImage1Request struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	imageId *string
 }
 
 // Image Id
-func (r ApiImage1Request) ImageId(imageId string) ApiImage1Request {
+func (r ImageAPIImage1Request) ImageId(imageId string) ImageAPIImage1Request {
 	r.imageId = &imageId
 	return r
 }
 
-func (r ApiImage1Request) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIImage1Request) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.Image1Execute(r)
 }
 
@@ -45,10 +45,10 @@ Image1 Get image
 The Image API serves as complement API to other APIs, such as , "Guide", "Technical Data" or "Service Schedules" and returns an image based on an imageId.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiImage1Request
+ @return ImageAPIImage1Request
 */
-func (a *ImageAPIService) Image1(ctx context.Context) ApiImage1Request {
-	return ApiImage1Request{
+func (a *ImageAPIService) Image1(ctx context.Context) ImageAPIImage1Request {
+	return ImageAPIImage1Request{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -56,7 +56,7 @@ func (a *ImageAPIService) Image1(ctx context.Context) ApiImage1Request {
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) Image1Execute(r ApiImage1Request) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) Image1Execute(r ImageAPIImage1Request) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -133,19 +133,19 @@ func (a *ImageAPIService) Image1Execute(r ApiImage1Request) (*os.File, *http.Res
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiImage2WiringDiagramsRequest struct {
+type ImageAPIImage2WiringDiagramsRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	diagramId *string
 }
 
 // Diagram Id
-func (r ApiImage2WiringDiagramsRequest) DiagramId(diagramId string) ApiImage2WiringDiagramsRequest {
+func (r ImageAPIImage2WiringDiagramsRequest) DiagramId(diagramId string) ImageAPIImage2WiringDiagramsRequest {
 	r.diagramId = &diagramId
 	return r
 }
 
-func (r ApiImage2WiringDiagramsRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIImage2WiringDiagramsRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.Image2WiringDiagramsExecute(r)
 }
 
@@ -155,10 +155,10 @@ Image2WiringDiagrams Get image wiring-diagrams
 The Image API for wiring-diagrams serves as complement API to the "Wiring Diagrams Diagram API" and returns an image based on an diagramId.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiImage2WiringDiagramsRequest
+ @return ImageAPIImage2WiringDiagramsRequest
 */
-func (a *ImageAPIService) Image2WiringDiagrams(ctx context.Context) ApiImage2WiringDiagramsRequest {
-	return ApiImage2WiringDiagramsRequest{
+func (a *ImageAPIService) Image2WiringDiagrams(ctx context.Context) ImageAPIImage2WiringDiagramsRequest {
+	return ImageAPIImage2WiringDiagramsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -166,7 +166,7 @@ func (a *ImageAPIService) Image2WiringDiagrams(ctx context.Context) ApiImage2Wir
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) Image2WiringDiagramsExecute(r ApiImage2WiringDiagramsRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) Image2WiringDiagramsExecute(r ImageAPIImage2WiringDiagramsRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

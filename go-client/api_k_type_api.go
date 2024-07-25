@@ -22,12 +22,12 @@ import (
 // KTypeAPIAPIService KTypeAPIAPI service
 type KTypeAPIAPIService service
 
-type ApiKtype1makesRequest struct {
+type KTypeAPIAPIKtype1makesRequest struct {
 	ctx context.Context
 	ApiService *KTypeAPIAPIService
 }
 
-func (r ApiKtype1makesRequest) Execute() ([]MakeV2, *http.Response, error) {
+func (r KTypeAPIAPIKtype1makesRequest) Execute() ([]MakeV2, *http.Response, error) {
 	return r.ApiService.Ktype1makesExecute(r)
 }
 
@@ -37,10 +37,10 @@ Ktype1makes Makes
 Get make information.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiKtype1makesRequest
+ @return KTypeAPIAPIKtype1makesRequest
 */
-func (a *KTypeAPIAPIService) Ktype1makes(ctx context.Context) ApiKtype1makesRequest {
-	return ApiKtype1makesRequest{
+func (a *KTypeAPIAPIService) Ktype1makes(ctx context.Context) KTypeAPIAPIKtype1makesRequest {
+	return KTypeAPIAPIKtype1makesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -48,7 +48,7 @@ func (a *KTypeAPIAPIService) Ktype1makes(ctx context.Context) ApiKtype1makesRequ
 
 // Execute executes the request
 //  @return []MakeV2
-func (a *KTypeAPIAPIService) Ktype1makesExecute(r ApiKtype1makesRequest) ([]MakeV2, *http.Response, error) {
+func (a *KTypeAPIAPIService) Ktype1makesExecute(r KTypeAPIAPIKtype1makesRequest) ([]MakeV2, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -121,19 +121,19 @@ func (a *KTypeAPIAPIService) Ktype1makesExecute(r ApiKtype1makesRequest) ([]Make
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiKtype2modelsRequest struct {
+type KTypeAPIAPIKtype2modelsRequest struct {
 	ctx context.Context
 	ApiService *KTypeAPIAPIService
 	makeId *string
 }
 
 // Id of the make
-func (r ApiKtype2modelsRequest) MakeId(makeId string) ApiKtype2modelsRequest {
+func (r KTypeAPIAPIKtype2modelsRequest) MakeId(makeId string) KTypeAPIAPIKtype2modelsRequest {
 	r.makeId = &makeId
 	return r
 }
 
-func (r ApiKtype2modelsRequest) Execute() ([]ModelSeriesV2DTO, *http.Response, error) {
+func (r KTypeAPIAPIKtype2modelsRequest) Execute() ([]ModelSeriesV2DTO, *http.Response, error) {
 	return r.ApiService.Ktype2modelsExecute(r)
 }
 
@@ -143,10 +143,10 @@ Ktype2models Models
 Get models information.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiKtype2modelsRequest
+ @return KTypeAPIAPIKtype2modelsRequest
 */
-func (a *KTypeAPIAPIService) Ktype2models(ctx context.Context) ApiKtype2modelsRequest {
-	return ApiKtype2modelsRequest{
+func (a *KTypeAPIAPIService) Ktype2models(ctx context.Context) KTypeAPIAPIKtype2modelsRequest {
+	return KTypeAPIAPIKtype2modelsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -154,7 +154,7 @@ func (a *KTypeAPIAPIService) Ktype2models(ctx context.Context) ApiKtype2modelsRe
 
 // Execute executes the request
 //  @return []ModelSeriesV2DTO
-func (a *KTypeAPIAPIService) Ktype2modelsExecute(r ApiKtype2modelsRequest) ([]ModelSeriesV2DTO, *http.Response, error) {
+func (a *KTypeAPIAPIService) Ktype2modelsExecute(r KTypeAPIAPIKtype2modelsRequest) ([]ModelSeriesV2DTO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -231,19 +231,19 @@ func (a *KTypeAPIAPIService) Ktype2modelsExecute(r ApiKtype2modelsRequest) ([]Mo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiKtype3typesRequest struct {
+type KTypeAPIAPIKtype3typesRequest struct {
 	ctx context.Context
 	ApiService *KTypeAPIAPIService
 	modelId *string
 }
 
 // Id of the model
-func (r ApiKtype3typesRequest) ModelId(modelId string) ApiKtype3typesRequest {
+func (r KTypeAPIAPIKtype3typesRequest) ModelId(modelId string) KTypeAPIAPIKtype3typesRequest {
 	r.modelId = &modelId
 	return r
 }
 
-func (r ApiKtype3typesRequest) Execute() ([]TypeV2Dto, *http.Response, error) {
+func (r KTypeAPIAPIKtype3typesRequest) Execute() ([]TypeV2Dto, *http.Response, error) {
 	return r.ApiService.Ktype3typesExecute(r)
 }
 
@@ -253,10 +253,10 @@ Ktype3types Types
 Get K-Types information.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiKtype3typesRequest
+ @return KTypeAPIAPIKtype3typesRequest
 */
-func (a *KTypeAPIAPIService) Ktype3types(ctx context.Context) ApiKtype3typesRequest {
-	return ApiKtype3typesRequest{
+func (a *KTypeAPIAPIService) Ktype3types(ctx context.Context) KTypeAPIAPIKtype3typesRequest {
+	return KTypeAPIAPIKtype3typesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -264,7 +264,7 @@ func (a *KTypeAPIAPIService) Ktype3types(ctx context.Context) ApiKtype3typesRequ
 
 // Execute executes the request
 //  @return []TypeV2Dto
-func (a *KTypeAPIAPIService) Ktype3typesExecute(r ApiKtype3typesRequest) ([]TypeV2Dto, *http.Response, error) {
+func (a *KTypeAPIAPIService) Ktype3typesExecute(r KTypeAPIAPIKtype3typesRequest) ([]TypeV2Dto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

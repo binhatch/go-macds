@@ -22,19 +22,19 @@ import (
 // DTCAPIAPIService DTCAPIAPI service
 type DTCAPIAPIService service
 
-type ApiDtcsRequest struct {
+type DTCAPIAPIDtcsRequest struct {
 	ctx context.Context
 	ApiService *DTCAPIAPIService
 	dtcRequestDto *DtcRequestDto
 }
 
 // The request requires at least the VIN, a list of DTCs and the language.
-func (r ApiDtcsRequest) DtcRequestDto(dtcRequestDto DtcRequestDto) ApiDtcsRequest {
+func (r DTCAPIAPIDtcsRequest) DtcRequestDto(dtcRequestDto DtcRequestDto) DTCAPIAPIDtcsRequest {
 	r.dtcRequestDto = &dtcRequestDto
 	return r
 }
 
-func (r ApiDtcsRequest) Execute() (*Response, *http.Response, error) {
+func (r DTCAPIAPIDtcsRequest) Execute() (*Response, *http.Response, error) {
 	return r.ApiService.DtcsExecute(r)
 }
 
@@ -44,10 +44,10 @@ Dtcs DTC API
 API to get trouble code (DTC) interpretations as well as a prediction of a root cause.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDtcsRequest
+ @return DTCAPIAPIDtcsRequest
 */
-func (a *DTCAPIAPIService) Dtcs(ctx context.Context) ApiDtcsRequest {
-	return ApiDtcsRequest{
+func (a *DTCAPIAPIService) Dtcs(ctx context.Context) DTCAPIAPIDtcsRequest {
+	return DTCAPIAPIDtcsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -55,7 +55,7 @@ func (a *DTCAPIAPIService) Dtcs(ctx context.Context) ApiDtcsRequest {
 
 // Execute executes the request
 //  @return Response
-func (a *DTCAPIAPIService) DtcsExecute(r ApiDtcsRequest) (*Response, *http.Response, error) {
+func (a *DTCAPIAPIService) DtcsExecute(r DTCAPIAPIDtcsRequest) (*Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

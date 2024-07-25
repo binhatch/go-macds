@@ -22,7 +22,7 @@ import (
 // TechnicalDataAPIService TechnicalDataAPI service
 type TechnicalDataAPIService service
 
-type ApiTechnicalData1mainRequest struct {
+type TechnicalDataAPITechnicalData1mainRequest struct {
 	ctx context.Context
 	ApiService *TechnicalDataAPIService
 	language *string
@@ -37,60 +37,60 @@ type ApiTechnicalData1mainRequest struct {
 }
 
 // Two characters defining the language code; allowed values: de, en, nl, zh, it, hu, hr, fr, fi, es, el, tr, da, sv, sk, cs, ru, ro, pt, pl
-func (r ApiTechnicalData1mainRequest) Language(language string) ApiTechnicalData1mainRequest {
+func (r TechnicalDataAPITechnicalData1mainRequest) Language(language string) TechnicalDataAPITechnicalData1mainRequest {
 	r.language = &language
 	return r
 }
 
 // KType
-func (r ApiTechnicalData1mainRequest) KType(kType string) ApiTechnicalData1mainRequest {
+func (r TechnicalDataAPITechnicalData1mainRequest) KType(kType string) TechnicalDataAPITechnicalData1mainRequest {
 	r.kType = &kType
 	return r
 }
 
 // Engine Code
-func (r ApiTechnicalData1mainRequest) EngineCode(engineCode string) ApiTechnicalData1mainRequest {
+func (r TechnicalDataAPITechnicalData1mainRequest) EngineCode(engineCode string) TechnicalDataAPITechnicalData1mainRequest {
 	r.engineCode = &engineCode
 	return r
 }
 
 // Engine kW
-func (r ApiTechnicalData1mainRequest) EngineKw(engineKw string) ApiTechnicalData1mainRequest {
+func (r TechnicalDataAPITechnicalData1mainRequest) EngineKw(engineKw string) TechnicalDataAPITechnicalData1mainRequest {
 	r.engineKw = &engineKw
 	return r
 }
 
 // Region Code
-func (r ApiTechnicalData1mainRequest) RegionCode(regionCode string) ApiTechnicalData1mainRequest {
+func (r TechnicalDataAPITechnicalData1mainRequest) RegionCode(regionCode string) TechnicalDataAPITechnicalData1mainRequest {
 	r.regionCode = &regionCode
 	return r
 }
 
 // HGS Manufacturer Id
-func (r ApiTechnicalData1mainRequest) HgsManufId(hgsManufId string) ApiTechnicalData1mainRequest {
+func (r TechnicalDataAPITechnicalData1mainRequest) HgsManufId(hgsManufId string) TechnicalDataAPITechnicalData1mainRequest {
 	r.hgsManufId = &hgsManufId
 	return r
 }
 
 // HGS Model Id
-func (r ApiTechnicalData1mainRequest) HgsModelId(hgsModelId string) ApiTechnicalData1mainRequest {
+func (r TechnicalDataAPITechnicalData1mainRequest) HgsModelId(hgsModelId string) TechnicalDataAPITechnicalData1mainRequest {
 	r.hgsModelId = &hgsModelId
 	return r
 }
 
 // Production Year
-func (r ApiTechnicalData1mainRequest) ProductionYear(productionYear string) ApiTechnicalData1mainRequest {
+func (r TechnicalDataAPITechnicalData1mainRequest) ProductionYear(productionYear string) TechnicalDataAPITechnicalData1mainRequest {
 	r.productionYear = &productionYear
 	return r
 }
 
 // Preview
-func (r ApiTechnicalData1mainRequest) Preview(preview string) ApiTechnicalData1mainRequest {
+func (r TechnicalDataAPITechnicalData1mainRequest) Preview(preview string) TechnicalDataAPITechnicalData1mainRequest {
 	r.preview = &preview
 	return r
 }
 
-func (r ApiTechnicalData1mainRequest) Execute() ([]VehicleTechData, *http.Response, error) {
+func (r TechnicalDataAPITechnicalData1mainRequest) Execute() ([]VehicleTechData, *http.Response, error) {
 	return r.ApiService.TechnicalData1mainExecute(r)
 }
 
@@ -100,10 +100,10 @@ TechnicalData1main Get technical data
 Get technical data for a selected vehicle, such as engine oil specifications, brake disk dimensions, tire sizes etc. The request needs the KType or HGS Manufacturer Id and HGS Model Id.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTechnicalData1mainRequest
+ @return TechnicalDataAPITechnicalData1mainRequest
 */
-func (a *TechnicalDataAPIService) TechnicalData1main(ctx context.Context) ApiTechnicalData1mainRequest {
-	return ApiTechnicalData1mainRequest{
+func (a *TechnicalDataAPIService) TechnicalData1main(ctx context.Context) TechnicalDataAPITechnicalData1mainRequest {
+	return TechnicalDataAPITechnicalData1mainRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -111,7 +111,7 @@ func (a *TechnicalDataAPIService) TechnicalData1main(ctx context.Context) ApiTec
 
 // Execute executes the request
 //  @return []VehicleTechData
-func (a *TechnicalDataAPIService) TechnicalData1mainExecute(r ApiTechnicalData1mainRequest) ([]VehicleTechData, *http.Response, error) {
+func (a *TechnicalDataAPIService) TechnicalData1mainExecute(r TechnicalDataAPITechnicalData1mainRequest) ([]VehicleTechData, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

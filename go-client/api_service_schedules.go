@@ -22,19 +22,19 @@ import (
 // ServiceSchedulesAPIService ServiceSchedulesAPI service
 type ServiceSchedulesAPIService service
 
-type ApiServiceSchedules1mainRequest struct {
+type ServiceSchedulesAPIServiceSchedules1mainRequest struct {
 	ctx context.Context
 	ApiService *ServiceSchedulesAPIService
 	serviceSchedulesRequestDTO *ServiceSchedulesRequestDTO
 }
 
 // The request requires at least kType, regionCode, language.
-func (r ApiServiceSchedules1mainRequest) ServiceSchedulesRequestDTO(serviceSchedulesRequestDTO ServiceSchedulesRequestDTO) ApiServiceSchedules1mainRequest {
+func (r ServiceSchedulesAPIServiceSchedules1mainRequest) ServiceSchedulesRequestDTO(serviceSchedulesRequestDTO ServiceSchedulesRequestDTO) ServiceSchedulesAPIServiceSchedules1mainRequest {
 	r.serviceSchedulesRequestDTO = &serviceSchedulesRequestDTO
 	return r
 }
 
-func (r ApiServiceSchedules1mainRequest) Execute() ([]ServiceType, *http.Response, error) {
+func (r ServiceSchedulesAPIServiceSchedules1mainRequest) Execute() ([]ServiceType, *http.Response, error) {
 	return r.ApiService.ServiceSchedules1mainExecute(r)
 }
 
@@ -44,10 +44,10 @@ ServiceSchedules1main Post service schedules
 Endpoint to get all available service types (such as fixed or variable service interval) and their associated services incl. expected labour times, interval details, instructions and more.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiServiceSchedules1mainRequest
+ @return ServiceSchedulesAPIServiceSchedules1mainRequest
 */
-func (a *ServiceSchedulesAPIService) ServiceSchedules1main(ctx context.Context) ApiServiceSchedules1mainRequest {
-	return ApiServiceSchedules1mainRequest{
+func (a *ServiceSchedulesAPIService) ServiceSchedules1main(ctx context.Context) ServiceSchedulesAPIServiceSchedules1mainRequest {
+	return ServiceSchedulesAPIServiceSchedules1mainRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -55,7 +55,7 @@ func (a *ServiceSchedulesAPIService) ServiceSchedules1main(ctx context.Context) 
 
 // Execute executes the request
 //  @return []ServiceType
-func (a *ServiceSchedulesAPIService) ServiceSchedules1mainExecute(r ApiServiceSchedules1mainRequest) ([]ServiceType, *http.Response, error) {
+func (a *ServiceSchedulesAPIService) ServiceSchedules1mainExecute(r ServiceSchedulesAPIServiceSchedules1mainRequest) ([]ServiceType, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -133,19 +133,19 @@ func (a *ServiceSchedulesAPIService) ServiceSchedules1mainExecute(r ApiServiceSc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiServiceSchedules2inspectionsRequest struct {
+type ServiceSchedulesAPIServiceSchedules2inspectionsRequest struct {
 	ctx context.Context
 	ApiService *ServiceSchedulesAPIService
 	inspectionsRequestDTO *InspectionsRequestDTO
 }
 
 // For the request, it is required to specify the kType, language, regionCode as well as the desired serviceIds.
-func (r ApiServiceSchedules2inspectionsRequest) InspectionsRequestDTO(inspectionsRequestDTO InspectionsRequestDTO) ApiServiceSchedules2inspectionsRequest {
+func (r ServiceSchedulesAPIServiceSchedules2inspectionsRequest) InspectionsRequestDTO(inspectionsRequestDTO InspectionsRequestDTO) ServiceSchedulesAPIServiceSchedules2inspectionsRequest {
 	r.inspectionsRequestDTO = &inspectionsRequestDTO
 	return r
 }
 
-func (r ApiServiceSchedules2inspectionsRequest) Execute() ([]SchemaCategory, *http.Response, error) {
+func (r ServiceSchedulesAPIServiceSchedules2inspectionsRequest) Execute() ([]SchemaCategory, *http.Response, error) {
 	return r.ApiService.ServiceSchedules2inspectionsExecute(r)
 }
 
@@ -155,10 +155,10 @@ ServiceSchedules2inspections Post service schedules inspections
 Endpoint to get detailed inspection steps, grouped by the sequence of operation in the repair shop, detailed labour times of the individual steps, potential components/spare parts (e.g. engine oil, ...), data inputs (e.g. tire pressure values), relevant technical data (e.g. engine oil specification) and helpful instructions.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiServiceSchedules2inspectionsRequest
+ @return ServiceSchedulesAPIServiceSchedules2inspectionsRequest
 */
-func (a *ServiceSchedulesAPIService) ServiceSchedules2inspections(ctx context.Context) ApiServiceSchedules2inspectionsRequest {
-	return ApiServiceSchedules2inspectionsRequest{
+func (a *ServiceSchedulesAPIService) ServiceSchedules2inspections(ctx context.Context) ServiceSchedulesAPIServiceSchedules2inspectionsRequest {
+	return ServiceSchedulesAPIServiceSchedules2inspectionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -166,7 +166,7 @@ func (a *ServiceSchedulesAPIService) ServiceSchedules2inspections(ctx context.Co
 
 // Execute executes the request
 //  @return []SchemaCategory
-func (a *ServiceSchedulesAPIService) ServiceSchedules2inspectionsExecute(r ApiServiceSchedules2inspectionsRequest) ([]SchemaCategory, *http.Response, error) {
+func (a *ServiceSchedulesAPIService) ServiceSchedules2inspectionsExecute(r ServiceSchedulesAPIServiceSchedules2inspectionsRequest) ([]SchemaCategory, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

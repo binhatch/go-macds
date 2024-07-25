@@ -22,19 +22,19 @@ import (
 // VISAPIAPIService VISAPIAPI service
 type VISAPIAPIService service
 
-type ApiIdentRequest struct {
+type VISAPIAPIIdentRequest struct {
 	ctx context.Context
 	ApiService *VISAPIAPIService
 	identRequestDTO *IdentRequestDTO
 }
 
 // The request includes at least the VIN.
-func (r ApiIdentRequest) IdentRequestDTO(identRequestDTO IdentRequestDTO) ApiIdentRequest {
+func (r VISAPIAPIIdentRequest) IdentRequestDTO(identRequestDTO IdentRequestDTO) VISAPIAPIIdentRequest {
 	r.identRequestDTO = &identRequestDTO
 	return r
 }
 
-func (r ApiIdentRequest) Execute() (*IdentResponse, *http.Response, error) {
+func (r VISAPIAPIIdentRequest) Execute() (*IdentResponse, *http.Response, error) {
 	return r.ApiService.IdentExecute(r)
 }
 
@@ -44,10 +44,10 @@ Ident Vehicle identification
 API to predict vehicles (Vehicle descriptors, KType or KBA) based on a VIN
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiIdentRequest
+ @return VISAPIAPIIdentRequest
 */
-func (a *VISAPIAPIService) Ident(ctx context.Context) ApiIdentRequest {
-	return ApiIdentRequest{
+func (a *VISAPIAPIService) Ident(ctx context.Context) VISAPIAPIIdentRequest {
+	return VISAPIAPIIdentRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -55,7 +55,7 @@ func (a *VISAPIAPIService) Ident(ctx context.Context) ApiIdentRequest {
 
 // Execute executes the request
 //  @return IdentResponse
-func (a *VISAPIAPIService) IdentExecute(r ApiIdentRequest) (*IdentResponse, *http.Response, error) {
+func (a *VISAPIAPIService) IdentExecute(r VISAPIAPIIdentRequest) (*IdentResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

@@ -22,19 +22,19 @@ import (
 // ComponentMeasurementValuesAPIService ComponentMeasurementValuesAPI service
 type ComponentMeasurementValuesAPIService service
 
-type ApiCompMeas31pinComponentsRequest struct {
+type ComponentMeasurementValuesAPICompMeas31pinComponentsRequest struct {
 	ctx context.Context
 	ApiService *ComponentMeasurementValuesAPIService
 	componentsV3RequestDTO *ComponentsV3RequestDTO
 }
 
 // The request at least requires the specification of kType and language to get a list of PIN components.
-func (r ApiCompMeas31pinComponentsRequest) ComponentsV3RequestDTO(componentsV3RequestDTO ComponentsV3RequestDTO) ApiCompMeas31pinComponentsRequest {
+func (r ComponentMeasurementValuesAPICompMeas31pinComponentsRequest) ComponentsV3RequestDTO(componentsV3RequestDTO ComponentsV3RequestDTO) ComponentMeasurementValuesAPICompMeas31pinComponentsRequest {
 	r.componentsV3RequestDTO = &componentsV3RequestDTO
 	return r
 }
 
-func (r ApiCompMeas31pinComponentsRequest) Execute() (*PinComponentsV3Response, *http.Response, error) {
+func (r ComponentMeasurementValuesAPICompMeas31pinComponentsRequest) Execute() (*PinComponentsV3Response, *http.Response, error) {
 	return r.ApiService.CompMeas31pinComponentsExecute(r)
 }
 
@@ -44,10 +44,10 @@ CompMeas31pinComponents Pin components V3
 Get the available components of a specified Ktype for which pin data is available.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCompMeas31pinComponentsRequest
+ @return ComponentMeasurementValuesAPICompMeas31pinComponentsRequest
 */
-func (a *ComponentMeasurementValuesAPIService) CompMeas31pinComponents(ctx context.Context) ApiCompMeas31pinComponentsRequest {
-	return ApiCompMeas31pinComponentsRequest{
+func (a *ComponentMeasurementValuesAPIService) CompMeas31pinComponents(ctx context.Context) ComponentMeasurementValuesAPICompMeas31pinComponentsRequest {
+	return ComponentMeasurementValuesAPICompMeas31pinComponentsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -55,7 +55,7 @@ func (a *ComponentMeasurementValuesAPIService) CompMeas31pinComponents(ctx conte
 
 // Execute executes the request
 //  @return PinComponentsV3Response
-func (a *ComponentMeasurementValuesAPIService) CompMeas31pinComponentsExecute(r ApiCompMeas31pinComponentsRequest) (*PinComponentsV3Response, *http.Response, error) {
+func (a *ComponentMeasurementValuesAPIService) CompMeas31pinComponentsExecute(r ComponentMeasurementValuesAPICompMeas31pinComponentsRequest) (*PinComponentsV3Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -133,19 +133,19 @@ func (a *ComponentMeasurementValuesAPIService) CompMeas31pinComponentsExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiCompMeas32pinDataRequest struct {
+type ComponentMeasurementValuesAPICompMeas32pinDataRequest struct {
 	ctx context.Context
 	ApiService *ComponentMeasurementValuesAPIService
 	componentDataV3RequestDTO *ComponentDataV3RequestDTO
 }
 
 // The request at least requires the specification of kType and language to get a list of PIN data.
-func (r ApiCompMeas32pinDataRequest) ComponentDataV3RequestDTO(componentDataV3RequestDTO ComponentDataV3RequestDTO) ApiCompMeas32pinDataRequest {
+func (r ComponentMeasurementValuesAPICompMeas32pinDataRequest) ComponentDataV3RequestDTO(componentDataV3RequestDTO ComponentDataV3RequestDTO) ComponentMeasurementValuesAPICompMeas32pinDataRequest {
 	r.componentDataV3RequestDTO = &componentDataV3RequestDTO
 	return r
 }
 
-func (r ApiCompMeas32pinDataRequest) Execute() (*PinDataV3Response, *http.Response, error) {
+func (r ComponentMeasurementValuesAPICompMeas32pinDataRequest) Execute() (*PinDataV3Response, *http.Response, error) {
 	return r.ApiService.CompMeas32pinDataExecute(r)
 }
 
@@ -155,10 +155,10 @@ CompMeas32pinData Pin data V3
 Get the Pin data of a specified component.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCompMeas32pinDataRequest
+ @return ComponentMeasurementValuesAPICompMeas32pinDataRequest
 */
-func (a *ComponentMeasurementValuesAPIService) CompMeas32pinData(ctx context.Context) ApiCompMeas32pinDataRequest {
-	return ApiCompMeas32pinDataRequest{
+func (a *ComponentMeasurementValuesAPIService) CompMeas32pinData(ctx context.Context) ComponentMeasurementValuesAPICompMeas32pinDataRequest {
+	return ComponentMeasurementValuesAPICompMeas32pinDataRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -166,7 +166,7 @@ func (a *ComponentMeasurementValuesAPIService) CompMeas32pinData(ctx context.Con
 
 // Execute executes the request
 //  @return PinDataV3Response
-func (a *ComponentMeasurementValuesAPIService) CompMeas32pinDataExecute(r ApiCompMeas32pinDataRequest) (*PinDataV3Response, *http.Response, error) {
+func (a *ComponentMeasurementValuesAPIService) CompMeas32pinDataExecute(r ComponentMeasurementValuesAPICompMeas32pinDataRequest) (*PinDataV3Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -244,19 +244,19 @@ func (a *ComponentMeasurementValuesAPIService) CompMeas32pinDataExecute(r ApiCom
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiCompMeas33pinEcuImageRequest struct {
+type ComponentMeasurementValuesAPICompMeas33pinEcuImageRequest struct {
 	ctx context.Context
 	ApiService *ComponentMeasurementValuesAPIService
 	ecuImageId *int32
 }
 
 // Id of the ECU Image
-func (r ApiCompMeas33pinEcuImageRequest) EcuImageId(ecuImageId int32) ApiCompMeas33pinEcuImageRequest {
+func (r ComponentMeasurementValuesAPICompMeas33pinEcuImageRequest) EcuImageId(ecuImageId int32) ComponentMeasurementValuesAPICompMeas33pinEcuImageRequest {
 	r.ecuImageId = &ecuImageId
 	return r
 }
 
-func (r ApiCompMeas33pinEcuImageRequest) Execute() (*UrlResponse, *http.Response, error) {
+func (r ComponentMeasurementValuesAPICompMeas33pinEcuImageRequest) Execute() (*UrlResponse, *http.Response, error) {
 	return r.ApiService.CompMeas33pinEcuImageExecute(r)
 }
 
@@ -266,10 +266,10 @@ CompMeas33pinEcuImage ECU image V3
 Get the ECU image of a component with pin data.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCompMeas33pinEcuImageRequest
+ @return ComponentMeasurementValuesAPICompMeas33pinEcuImageRequest
 */
-func (a *ComponentMeasurementValuesAPIService) CompMeas33pinEcuImage(ctx context.Context) ApiCompMeas33pinEcuImageRequest {
-	return ApiCompMeas33pinEcuImageRequest{
+func (a *ComponentMeasurementValuesAPIService) CompMeas33pinEcuImage(ctx context.Context) ComponentMeasurementValuesAPICompMeas33pinEcuImageRequest {
+	return ComponentMeasurementValuesAPICompMeas33pinEcuImageRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -277,7 +277,7 @@ func (a *ComponentMeasurementValuesAPIService) CompMeas33pinEcuImage(ctx context
 
 // Execute executes the request
 //  @return UrlResponse
-func (a *ComponentMeasurementValuesAPIService) CompMeas33pinEcuImageExecute(r ApiCompMeas33pinEcuImageRequest) (*UrlResponse, *http.Response, error) {
+func (a *ComponentMeasurementValuesAPIService) CompMeas33pinEcuImageExecute(r ComponentMeasurementValuesAPICompMeas33pinEcuImageRequest) (*UrlResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -354,19 +354,19 @@ func (a *ComponentMeasurementValuesAPIService) CompMeas33pinEcuImageExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiCompMeas41pinComponentsRequest struct {
+type ComponentMeasurementValuesAPICompMeas41pinComponentsRequest struct {
 	ctx context.Context
 	ApiService *ComponentMeasurementValuesAPIService
 	componentsV4RequestDTO *ComponentsV4RequestDTO
 }
 
 // The request at least requires the specification of kType and language to get a list of PIN components.
-func (r ApiCompMeas41pinComponentsRequest) ComponentsV4RequestDTO(componentsV4RequestDTO ComponentsV4RequestDTO) ApiCompMeas41pinComponentsRequest {
+func (r ComponentMeasurementValuesAPICompMeas41pinComponentsRequest) ComponentsV4RequestDTO(componentsV4RequestDTO ComponentsV4RequestDTO) ComponentMeasurementValuesAPICompMeas41pinComponentsRequest {
 	r.componentsV4RequestDTO = &componentsV4RequestDTO
 	return r
 }
 
-func (r ApiCompMeas41pinComponentsRequest) Execute() (*PinComponentsV4Response, *http.Response, error) {
+func (r ComponentMeasurementValuesAPICompMeas41pinComponentsRequest) Execute() (*PinComponentsV4Response, *http.Response, error) {
 	return r.ApiService.CompMeas41pinComponentsExecute(r)
 }
 
@@ -376,10 +376,10 @@ CompMeas41pinComponents Pin components V4
 Get the available components of a specified Ktype for which pin data is available.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCompMeas41pinComponentsRequest
+ @return ComponentMeasurementValuesAPICompMeas41pinComponentsRequest
 */
-func (a *ComponentMeasurementValuesAPIService) CompMeas41pinComponents(ctx context.Context) ApiCompMeas41pinComponentsRequest {
-	return ApiCompMeas41pinComponentsRequest{
+func (a *ComponentMeasurementValuesAPIService) CompMeas41pinComponents(ctx context.Context) ComponentMeasurementValuesAPICompMeas41pinComponentsRequest {
+	return ComponentMeasurementValuesAPICompMeas41pinComponentsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -387,7 +387,7 @@ func (a *ComponentMeasurementValuesAPIService) CompMeas41pinComponents(ctx conte
 
 // Execute executes the request
 //  @return PinComponentsV4Response
-func (a *ComponentMeasurementValuesAPIService) CompMeas41pinComponentsExecute(r ApiCompMeas41pinComponentsRequest) (*PinComponentsV4Response, *http.Response, error) {
+func (a *ComponentMeasurementValuesAPIService) CompMeas41pinComponentsExecute(r ComponentMeasurementValuesAPICompMeas41pinComponentsRequest) (*PinComponentsV4Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -465,19 +465,19 @@ func (a *ComponentMeasurementValuesAPIService) CompMeas41pinComponentsExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiCompMeas42pinDataRequest struct {
+type ComponentMeasurementValuesAPICompMeas42pinDataRequest struct {
 	ctx context.Context
 	ApiService *ComponentMeasurementValuesAPIService
 	componentDataV4RequestDTO *ComponentDataV4RequestDTO
 }
 
 // The request at least requires the specification of kType and language to get a list of PIN data.
-func (r ApiCompMeas42pinDataRequest) ComponentDataV4RequestDTO(componentDataV4RequestDTO ComponentDataV4RequestDTO) ApiCompMeas42pinDataRequest {
+func (r ComponentMeasurementValuesAPICompMeas42pinDataRequest) ComponentDataV4RequestDTO(componentDataV4RequestDTO ComponentDataV4RequestDTO) ComponentMeasurementValuesAPICompMeas42pinDataRequest {
 	r.componentDataV4RequestDTO = &componentDataV4RequestDTO
 	return r
 }
 
-func (r ApiCompMeas42pinDataRequest) Execute() (*PinDataV4Response, *http.Response, error) {
+func (r ComponentMeasurementValuesAPICompMeas42pinDataRequest) Execute() (*PinDataV4Response, *http.Response, error) {
 	return r.ApiService.CompMeas42pinDataExecute(r)
 }
 
@@ -487,10 +487,10 @@ CompMeas42pinData Pin data V4
 Get the Pin data of a specified component.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCompMeas42pinDataRequest
+ @return ComponentMeasurementValuesAPICompMeas42pinDataRequest
 */
-func (a *ComponentMeasurementValuesAPIService) CompMeas42pinData(ctx context.Context) ApiCompMeas42pinDataRequest {
-	return ApiCompMeas42pinDataRequest{
+func (a *ComponentMeasurementValuesAPIService) CompMeas42pinData(ctx context.Context) ComponentMeasurementValuesAPICompMeas42pinDataRequest {
+	return ComponentMeasurementValuesAPICompMeas42pinDataRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -498,7 +498,7 @@ func (a *ComponentMeasurementValuesAPIService) CompMeas42pinData(ctx context.Con
 
 // Execute executes the request
 //  @return PinDataV4Response
-func (a *ComponentMeasurementValuesAPIService) CompMeas42pinDataExecute(r ApiCompMeas42pinDataRequest) (*PinDataV4Response, *http.Response, error) {
+func (a *ComponentMeasurementValuesAPIService) CompMeas42pinDataExecute(r ComponentMeasurementValuesAPICompMeas42pinDataRequest) (*PinDataV4Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -576,19 +576,19 @@ func (a *ComponentMeasurementValuesAPIService) CompMeas42pinDataExecute(r ApiCom
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiCompMeas43pinEcuImageRequest struct {
+type ComponentMeasurementValuesAPICompMeas43pinEcuImageRequest struct {
 	ctx context.Context
 	ApiService *ComponentMeasurementValuesAPIService
 	ecuImageId *int32
 }
 
 // Id of the ECU Image
-func (r ApiCompMeas43pinEcuImageRequest) EcuImageId(ecuImageId int32) ApiCompMeas43pinEcuImageRequest {
+func (r ComponentMeasurementValuesAPICompMeas43pinEcuImageRequest) EcuImageId(ecuImageId int32) ComponentMeasurementValuesAPICompMeas43pinEcuImageRequest {
 	r.ecuImageId = &ecuImageId
 	return r
 }
 
-func (r ApiCompMeas43pinEcuImageRequest) Execute() (*UrlResponse, *http.Response, error) {
+func (r ComponentMeasurementValuesAPICompMeas43pinEcuImageRequest) Execute() (*UrlResponse, *http.Response, error) {
 	return r.ApiService.CompMeas43pinEcuImageExecute(r)
 }
 
@@ -598,10 +598,10 @@ CompMeas43pinEcuImage ECU image V4
 Get the ECU image of a component with pin data.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCompMeas43pinEcuImageRequest
+ @return ComponentMeasurementValuesAPICompMeas43pinEcuImageRequest
 */
-func (a *ComponentMeasurementValuesAPIService) CompMeas43pinEcuImage(ctx context.Context) ApiCompMeas43pinEcuImageRequest {
-	return ApiCompMeas43pinEcuImageRequest{
+func (a *ComponentMeasurementValuesAPIService) CompMeas43pinEcuImage(ctx context.Context) ComponentMeasurementValuesAPICompMeas43pinEcuImageRequest {
+	return ComponentMeasurementValuesAPICompMeas43pinEcuImageRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -609,7 +609,7 @@ func (a *ComponentMeasurementValuesAPIService) CompMeas43pinEcuImage(ctx context
 
 // Execute executes the request
 //  @return UrlResponse
-func (a *ComponentMeasurementValuesAPIService) CompMeas43pinEcuImageExecute(r ApiCompMeas43pinEcuImageRequest) (*UrlResponse, *http.Response, error) {
+func (a *ComponentMeasurementValuesAPIService) CompMeas43pinEcuImageExecute(r ComponentMeasurementValuesAPICompMeas43pinEcuImageRequest) (*UrlResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

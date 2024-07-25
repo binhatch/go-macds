@@ -22,19 +22,19 @@ import (
 // LocationAPIAPIService LocationAPIAPI service
 type LocationAPIAPIService service
 
-type ApiLocation1componentRequest struct {
+type LocationAPIAPILocation1componentRequest struct {
 	ctx context.Context
 	ApiService *LocationAPIAPIService
 	locationsRequestDTO *LocationsRequestDTO
 }
 
 // The request at least requires the specification of kType and language to get a list of location components.
-func (r ApiLocation1componentRequest) LocationsRequestDTO(locationsRequestDTO LocationsRequestDTO) ApiLocation1componentRequest {
+func (r LocationAPIAPILocation1componentRequest) LocationsRequestDTO(locationsRequestDTO LocationsRequestDTO) LocationAPIAPILocation1componentRequest {
 	r.locationsRequestDTO = &locationsRequestDTO
 	return r
 }
 
-func (r ApiLocation1componentRequest) Execute() (*LocationsVehicleResponse, *http.Response, error) {
+func (r LocationAPIAPILocation1componentRequest) Execute() (*LocationsVehicleResponse, *http.Response, error) {
 	return r.ApiService.Location1componentExecute(r)
 }
 
@@ -44,10 +44,10 @@ Location1component Component locations
 The Component Location API returns information about the components of a vehicle and their location based on the KType. The endpoint shows information by giving an image of the position in the vehicle and the coordinates.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiLocation1componentRequest
+ @return LocationAPIAPILocation1componentRequest
 */
-func (a *LocationAPIAPIService) Location1component(ctx context.Context) ApiLocation1componentRequest {
-	return ApiLocation1componentRequest{
+func (a *LocationAPIAPIService) Location1component(ctx context.Context) LocationAPIAPILocation1componentRequest {
+	return LocationAPIAPILocation1componentRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -55,7 +55,7 @@ func (a *LocationAPIAPIService) Location1component(ctx context.Context) ApiLocat
 
 // Execute executes the request
 //  @return LocationsVehicleResponse
-func (a *LocationAPIAPIService) Location1componentExecute(r ApiLocation1componentRequest) (*LocationsVehicleResponse, *http.Response, error) {
+func (a *LocationAPIAPIService) Location1componentExecute(r LocationAPIAPILocation1componentRequest) (*LocationsVehicleResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -133,19 +133,19 @@ func (a *LocationAPIAPIService) Location1componentExecute(r ApiLocation1componen
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiLocation2fuseboxRequest struct {
+type LocationAPIAPILocation2fuseboxRequest struct {
 	ctx context.Context
 	ApiService *LocationAPIAPIService
 	fuseBoxLocationsRequestDTO *FuseBoxLocationsRequestDTO
 }
 
 // The request requires the specification of kType and language to get the fusebox location.
-func (r ApiLocation2fuseboxRequest) FuseBoxLocationsRequestDTO(fuseBoxLocationsRequestDTO FuseBoxLocationsRequestDTO) ApiLocation2fuseboxRequest {
+func (r LocationAPIAPILocation2fuseboxRequest) FuseBoxLocationsRequestDTO(fuseBoxLocationsRequestDTO FuseBoxLocationsRequestDTO) LocationAPIAPILocation2fuseboxRequest {
 	r.fuseBoxLocationsRequestDTO = &fuseBoxLocationsRequestDTO
 	return r
 }
 
-func (r ApiLocation2fuseboxRequest) Execute() (*FuseBoxLocationsResponse, *http.Response, error) {
+func (r LocationAPIAPILocation2fuseboxRequest) Execute() (*FuseBoxLocationsResponse, *http.Response, error) {
 	return r.ApiService.Location2fuseboxExecute(r)
 }
 
@@ -155,10 +155,10 @@ Location2fusebox Fuse and Fuse Box Locations
 The Fuses API lists information about the fuse boxes, its location and relays upon specification of a KType.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiLocation2fuseboxRequest
+ @return LocationAPIAPILocation2fuseboxRequest
 */
-func (a *LocationAPIAPIService) Location2fusebox(ctx context.Context) ApiLocation2fuseboxRequest {
-	return ApiLocation2fuseboxRequest{
+func (a *LocationAPIAPIService) Location2fusebox(ctx context.Context) LocationAPIAPILocation2fuseboxRequest {
+	return LocationAPIAPILocation2fuseboxRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -166,7 +166,7 @@ func (a *LocationAPIAPIService) Location2fusebox(ctx context.Context) ApiLocatio
 
 // Execute executes the request
 //  @return FuseBoxLocationsResponse
-func (a *LocationAPIAPIService) Location2fuseboxExecute(r ApiLocation2fuseboxRequest) (*FuseBoxLocationsResponse, *http.Response, error) {
+func (a *LocationAPIAPIService) Location2fuseboxExecute(r LocationAPIAPILocation2fuseboxRequest) (*FuseBoxLocationsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

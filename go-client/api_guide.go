@@ -22,7 +22,7 @@ import (
 // GuideAPIService GuideAPI service
 type GuideAPIService service
 
-type ApiGuide1Request struct {
+type GuideAPIGuide1Request struct {
 	ctx context.Context
 	ApiService *GuideAPIService
 	guideId *string
@@ -30,18 +30,18 @@ type ApiGuide1Request struct {
 }
 
 // Guide Id
-func (r ApiGuide1Request) GuideId(guideId string) ApiGuide1Request {
+func (r GuideAPIGuide1Request) GuideId(guideId string) GuideAPIGuide1Request {
 	r.guideId = &guideId
 	return r
 }
 
 // Two characters defining the language code; allowed values: de, en, nl, zh, it, hu, hr, fr, fi, es, el, tr, da, sv, sk, cs, ru, ro, pt, pl
-func (r ApiGuide1Request) Language(language string) ApiGuide1Request {
+func (r GuideAPIGuide1Request) Language(language string) GuideAPIGuide1Request {
 	r.language = &language
 	return r
 }
 
-func (r ApiGuide1Request) Execute() ([]Guide, *http.Response, error) {
+func (r GuideAPIGuide1Request) Execute() ([]Guide, *http.Response, error) {
 	return r.ApiService.Guide1Execute(r)
 }
 
@@ -51,10 +51,10 @@ Guide1 Get guide
 Get the guide
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGuide1Request
+ @return GuideAPIGuide1Request
 */
-func (a *GuideAPIService) Guide1(ctx context.Context) ApiGuide1Request {
-	return ApiGuide1Request{
+func (a *GuideAPIService) Guide1(ctx context.Context) GuideAPIGuide1Request {
+	return GuideAPIGuide1Request{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -62,7 +62,7 @@ func (a *GuideAPIService) Guide1(ctx context.Context) ApiGuide1Request {
 
 // Execute executes the request
 //  @return []Guide
-func (a *GuideAPIService) Guide1Execute(r ApiGuide1Request) ([]Guide, *http.Response, error) {
+func (a *GuideAPIService) Guide1Execute(r GuideAPIGuide1Request) ([]Guide, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

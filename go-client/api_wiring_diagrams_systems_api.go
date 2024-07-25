@@ -22,19 +22,19 @@ import (
 // WiringDiagramsSystemsAPIAPIService WiringDiagramsSystemsAPIAPI service
 type WiringDiagramsSystemsAPIAPIService service
 
-type ApiPostWiringDiagrams1SystemsRequest struct {
+type WiringDiagramsSystemsAPIAPIPostWiringDiagrams1SystemsRequest struct {
 	ctx context.Context
 	ApiService *WiringDiagramsSystemsAPIAPIService
 	wiringDiagramsRequestDTO *WiringDiagramsRequestDTO
 }
 
 // The request requires at least kType, language.
-func (r ApiPostWiringDiagrams1SystemsRequest) WiringDiagramsRequestDTO(wiringDiagramsRequestDTO WiringDiagramsRequestDTO) ApiPostWiringDiagrams1SystemsRequest {
+func (r WiringDiagramsSystemsAPIAPIPostWiringDiagrams1SystemsRequest) WiringDiagramsRequestDTO(wiringDiagramsRequestDTO WiringDiagramsRequestDTO) WiringDiagramsSystemsAPIAPIPostWiringDiagrams1SystemsRequest {
 	r.wiringDiagramsRequestDTO = &wiringDiagramsRequestDTO
 	return r
 }
 
-func (r ApiPostWiringDiagrams1SystemsRequest) Execute() ([]WiringDiagramSystemsResponse, *http.Response, error) {
+func (r WiringDiagramsSystemsAPIAPIPostWiringDiagrams1SystemsRequest) Execute() ([]WiringDiagramSystemsResponse, *http.Response, error) {
 	return r.ApiService.PostWiringDiagrams1SystemsExecute(r)
 }
 
@@ -44,10 +44,10 @@ PostWiringDiagrams1Systems Post wiring diagrams systems
 Endpoint to get all available wiring diagrams systems.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostWiringDiagrams1SystemsRequest
+ @return WiringDiagramsSystemsAPIAPIPostWiringDiagrams1SystemsRequest
 */
-func (a *WiringDiagramsSystemsAPIAPIService) PostWiringDiagrams1Systems(ctx context.Context) ApiPostWiringDiagrams1SystemsRequest {
-	return ApiPostWiringDiagrams1SystemsRequest{
+func (a *WiringDiagramsSystemsAPIAPIService) PostWiringDiagrams1Systems(ctx context.Context) WiringDiagramsSystemsAPIAPIPostWiringDiagrams1SystemsRequest {
+	return WiringDiagramsSystemsAPIAPIPostWiringDiagrams1SystemsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -55,7 +55,7 @@ func (a *WiringDiagramsSystemsAPIAPIService) PostWiringDiagrams1Systems(ctx cont
 
 // Execute executes the request
 //  @return []WiringDiagramSystemsResponse
-func (a *WiringDiagramsSystemsAPIAPIService) PostWiringDiagrams1SystemsExecute(r ApiPostWiringDiagrams1SystemsRequest) ([]WiringDiagramSystemsResponse, *http.Response, error) {
+func (a *WiringDiagramsSystemsAPIAPIService) PostWiringDiagrams1SystemsExecute(r WiringDiagramsSystemsAPIAPIPostWiringDiagrams1SystemsRequest) ([]WiringDiagramSystemsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -133,19 +133,19 @@ func (a *WiringDiagramsSystemsAPIAPIService) PostWiringDiagrams1SystemsExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPostWiringDiagrams2DiagramRequest struct {
+type WiringDiagramsSystemsAPIAPIPostWiringDiagrams2DiagramRequest struct {
 	ctx context.Context
 	ApiService *WiringDiagramsSystemsAPIAPIService
 	wiringDiagramsDiagramsRequestDTO *WiringDiagramsDiagramsRequestDTO
 }
 
 // The request requires at least systemId, language.
-func (r ApiPostWiringDiagrams2DiagramRequest) WiringDiagramsDiagramsRequestDTO(wiringDiagramsDiagramsRequestDTO WiringDiagramsDiagramsRequestDTO) ApiPostWiringDiagrams2DiagramRequest {
+func (r WiringDiagramsSystemsAPIAPIPostWiringDiagrams2DiagramRequest) WiringDiagramsDiagramsRequestDTO(wiringDiagramsDiagramsRequestDTO WiringDiagramsDiagramsRequestDTO) WiringDiagramsSystemsAPIAPIPostWiringDiagrams2DiagramRequest {
 	r.wiringDiagramsDiagramsRequestDTO = &wiringDiagramsDiagramsRequestDTO
 	return r
 }
 
-func (r ApiPostWiringDiagrams2DiagramRequest) Execute() (*SystemAndDiagramResponse, *http.Response, error) {
+func (r WiringDiagramsSystemsAPIAPIPostWiringDiagrams2DiagramRequest) Execute() (*SystemAndDiagramResponse, *http.Response, error) {
 	return r.ApiService.PostWiringDiagrams2DiagramExecute(r)
 }
 
@@ -155,10 +155,10 @@ PostWiringDiagrams2Diagram Post wiring diagrams diagrams
 Endpoint to get a wiring diagrams diagram.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostWiringDiagrams2DiagramRequest
+ @return WiringDiagramsSystemsAPIAPIPostWiringDiagrams2DiagramRequest
 */
-func (a *WiringDiagramsSystemsAPIAPIService) PostWiringDiagrams2Diagram(ctx context.Context) ApiPostWiringDiagrams2DiagramRequest {
-	return ApiPostWiringDiagrams2DiagramRequest{
+func (a *WiringDiagramsSystemsAPIAPIService) PostWiringDiagrams2Diagram(ctx context.Context) WiringDiagramsSystemsAPIAPIPostWiringDiagrams2DiagramRequest {
+	return WiringDiagramsSystemsAPIAPIPostWiringDiagrams2DiagramRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -166,7 +166,7 @@ func (a *WiringDiagramsSystemsAPIAPIService) PostWiringDiagrams2Diagram(ctx cont
 
 // Execute executes the request
 //  @return SystemAndDiagramResponse
-func (a *WiringDiagramsSystemsAPIAPIService) PostWiringDiagrams2DiagramExecute(r ApiPostWiringDiagrams2DiagramRequest) (*SystemAndDiagramResponse, *http.Response, error) {
+func (a *WiringDiagramsSystemsAPIAPIService) PostWiringDiagrams2DiagramExecute(r WiringDiagramsSystemsAPIAPIPostWiringDiagrams2DiagramRequest) (*SystemAndDiagramResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

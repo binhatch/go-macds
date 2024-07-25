@@ -22,7 +22,7 @@ import (
 // RecallCampaignsAPIService RecallCampaignsAPI service
 type RecallCampaignsAPIService service
 
-type ApiRecallCampaigns1treeRequest struct {
+type RecallCampaignsAPIRecallCampaigns1treeRequest struct {
 	ctx context.Context
 	ApiService *RecallCampaignsAPIService
 	kType *string
@@ -32,30 +32,30 @@ type ApiRecallCampaigns1treeRequest struct {
 }
 
 // KType
-func (r ApiRecallCampaigns1treeRequest) KType(kType string) ApiRecallCampaigns1treeRequest {
+func (r RecallCampaignsAPIRecallCampaigns1treeRequest) KType(kType string) RecallCampaignsAPIRecallCampaigns1treeRequest {
 	r.kType = &kType
 	return r
 }
 
 // Two characters defining the language code; allowed values: de, en, nl, zh, it, hu, hr, fr, fi, es, el, tr, da, sv, sk, cs, ru, ro, pt, pl
-func (r ApiRecallCampaigns1treeRequest) Language(language string) ApiRecallCampaigns1treeRequest {
+func (r RecallCampaignsAPIRecallCampaigns1treeRequest) Language(language string) RecallCampaignsAPIRecallCampaigns1treeRequest {
 	r.language = &language
 	return r
 }
 
 // Two characters defining the ISO country code
-func (r ApiRecallCampaigns1treeRequest) Country(country string) ApiRecallCampaigns1treeRequest {
+func (r RecallCampaignsAPIRecallCampaigns1treeRequest) Country(country string) RecallCampaignsAPIRecallCampaigns1treeRequest {
 	r.country = &country
 	return r
 }
 
 // Include Outdated Info
-func (r ApiRecallCampaigns1treeRequest) IncludeOutdatedInfos(includeOutdatedInfos string) ApiRecallCampaigns1treeRequest {
+func (r RecallCampaignsAPIRecallCampaigns1treeRequest) IncludeOutdatedInfos(includeOutdatedInfos string) RecallCampaignsAPIRecallCampaigns1treeRequest {
 	r.includeOutdatedInfos = &includeOutdatedInfos
 	return r
 }
 
-func (r ApiRecallCampaigns1treeRequest) Execute() ([]RecallGroup, *http.Response, error) {
+func (r RecallCampaignsAPIRecallCampaigns1treeRequest) Execute() ([]RecallGroup, *http.Response, error) {
 	return r.ApiService.RecallCampaigns1treeExecute(r)
 }
 
@@ -65,10 +65,10 @@ RecallCampaigns1tree Get recall campaigns tree
 Get security-related actions coordinated via federal instituations (e.g. the Kraftfahrbundesamt (KBA) in Germany).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRecallCampaigns1treeRequest
+ @return RecallCampaignsAPIRecallCampaigns1treeRequest
 */
-func (a *RecallCampaignsAPIService) RecallCampaigns1tree(ctx context.Context) ApiRecallCampaigns1treeRequest {
-	return ApiRecallCampaigns1treeRequest{
+func (a *RecallCampaignsAPIService) RecallCampaigns1tree(ctx context.Context) RecallCampaignsAPIRecallCampaigns1treeRequest {
+	return RecallCampaignsAPIRecallCampaigns1treeRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -76,7 +76,7 @@ func (a *RecallCampaignsAPIService) RecallCampaigns1tree(ctx context.Context) Ap
 
 // Execute executes the request
 //  @return []RecallGroup
-func (a *RecallCampaignsAPIService) RecallCampaigns1treeExecute(r ApiRecallCampaigns1treeRequest) ([]RecallGroup, *http.Response, error) {
+func (a *RecallCampaignsAPIService) RecallCampaigns1treeExecute(r RecallCampaignsAPIRecallCampaigns1treeRequest) ([]RecallGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

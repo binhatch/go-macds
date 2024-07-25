@@ -22,19 +22,19 @@ import (
 // ComponentListForFeedbackAPIAPIService ComponentListForFeedbackAPIAPI service
 type ComponentListForFeedbackAPIAPIService service
 
-type ApiFeedbackpredictioncomponentsRequest struct {
+type ComponentListForFeedbackAPIAPIFeedbackpredictioncomponentsRequest struct {
 	ctx context.Context
 	ApiService *ComponentListForFeedbackAPIAPIService
 	language *string
 }
 
 // Two characters defining the language code; allowed values: de, en, nl, zh, it, hu, hr, fr, fi, es, el, tr, da, sv, sk, cs, ru, ro, pt, pl
-func (r ApiFeedbackpredictioncomponentsRequest) Language(language string) ApiFeedbackpredictioncomponentsRequest {
+func (r ComponentListForFeedbackAPIAPIFeedbackpredictioncomponentsRequest) Language(language string) ComponentListForFeedbackAPIAPIFeedbackpredictioncomponentsRequest {
 	r.language = &language
 	return r
 }
 
-func (r ApiFeedbackpredictioncomponentsRequest) Execute() ([]DtcFeedbackPredictionComponent, *http.Response, error) {
+func (r ComponentListForFeedbackAPIAPIFeedbackpredictioncomponentsRequest) Execute() ([]DtcFeedbackPredictionComponent, *http.Response, error) {
 	return r.ApiService.FeedbackpredictioncomponentsExecute(r)
 }
 
@@ -44,10 +44,10 @@ Feedbackpredictioncomponents FEEDBACK PREDICTION COMPONENTS API
 API to get a list of available vehicle components to choose from for the feedback API
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiFeedbackpredictioncomponentsRequest
+ @return ComponentListForFeedbackAPIAPIFeedbackpredictioncomponentsRequest
 */
-func (a *ComponentListForFeedbackAPIAPIService) Feedbackpredictioncomponents(ctx context.Context) ApiFeedbackpredictioncomponentsRequest {
-	return ApiFeedbackpredictioncomponentsRequest{
+func (a *ComponentListForFeedbackAPIAPIService) Feedbackpredictioncomponents(ctx context.Context) ComponentListForFeedbackAPIAPIFeedbackpredictioncomponentsRequest {
+	return ComponentListForFeedbackAPIAPIFeedbackpredictioncomponentsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -55,7 +55,7 @@ func (a *ComponentListForFeedbackAPIAPIService) Feedbackpredictioncomponents(ctx
 
 // Execute executes the request
 //  @return []DtcFeedbackPredictionComponent
-func (a *ComponentListForFeedbackAPIAPIService) FeedbackpredictioncomponentsExecute(r ApiFeedbackpredictioncomponentsRequest) ([]DtcFeedbackPredictionComponent, *http.Response, error) {
+func (a *ComponentListForFeedbackAPIAPIService) FeedbackpredictioncomponentsExecute(r ComponentListForFeedbackAPIAPIFeedbackpredictioncomponentsRequest) ([]DtcFeedbackPredictionComponent, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

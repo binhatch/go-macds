@@ -22,7 +22,7 @@ import (
 // KTypeComponentMappingAPIService KTypeComponentMappingAPI service
 type KTypeComponentMappingAPIService service
 
-type ApiComponentMappingRequest struct {
+type KTypeComponentMappingAPIComponentMappingRequest struct {
 	ctx context.Context
 	ApiService *KTypeComponentMappingAPIService
 	kType *string
@@ -31,24 +31,24 @@ type ApiComponentMappingRequest struct {
 }
 
 // KType
-func (r ApiComponentMappingRequest) KType(kType string) ApiComponentMappingRequest {
+func (r KTypeComponentMappingAPIComponentMappingRequest) KType(kType string) KTypeComponentMappingAPIComponentMappingRequest {
 	r.kType = &kType
 	return r
 }
 
 // System Identification
-func (r ApiComponentMappingRequest) SystemIdent(systemIdent string) ApiComponentMappingRequest {
+func (r KTypeComponentMappingAPIComponentMappingRequest) SystemIdent(systemIdent string) KTypeComponentMappingAPIComponentMappingRequest {
 	r.systemIdent = &systemIdent
 	return r
 }
 
 // Component Id
-func (r ApiComponentMappingRequest) ComponentId(componentId string) ApiComponentMappingRequest {
+func (r KTypeComponentMappingAPIComponentMappingRequest) ComponentId(componentId string) KTypeComponentMappingAPIComponentMappingRequest {
 	r.componentId = &componentId
 	return r
 }
 
-func (r ApiComponentMappingRequest) Execute() (*KtypeComponentMappingResponse, *http.Response, error) {
+func (r KTypeComponentMappingAPIComponentMappingRequest) Execute() (*KtypeComponentMappingResponse, *http.Response, error) {
 	return r.ApiService.ComponentMappingExecute(r)
 }
 
@@ -58,10 +58,10 @@ ComponentMapping KType Component Mapping
 The KType Component Mapping
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiComponentMappingRequest
+ @return KTypeComponentMappingAPIComponentMappingRequest
 */
-func (a *KTypeComponentMappingAPIService) ComponentMapping(ctx context.Context) ApiComponentMappingRequest {
-	return ApiComponentMappingRequest{
+func (a *KTypeComponentMappingAPIService) ComponentMapping(ctx context.Context) KTypeComponentMappingAPIComponentMappingRequest {
+	return KTypeComponentMappingAPIComponentMappingRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -69,7 +69,7 @@ func (a *KTypeComponentMappingAPIService) ComponentMapping(ctx context.Context) 
 
 // Execute executes the request
 //  @return KtypeComponentMappingResponse
-func (a *KTypeComponentMappingAPIService) ComponentMappingExecute(r ApiComponentMappingRequest) (*KtypeComponentMappingResponse, *http.Response, error) {
+func (a *KTypeComponentMappingAPIService) ComponentMappingExecute(r KTypeComponentMappingAPIComponentMappingRequest) (*KtypeComponentMappingResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

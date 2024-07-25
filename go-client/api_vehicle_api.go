@@ -22,7 +22,7 @@ import (
 // VehicleAPIAPIService VehicleAPIAPI service
 type VehicleAPIAPIService service
 
-type ApiGetVehiclesRequest struct {
+type VehicleAPIAPIGetVehiclesRequest struct {
 	ctx context.Context
 	ApiService *VehicleAPIAPIService
 	kType *string
@@ -30,18 +30,18 @@ type ApiGetVehiclesRequest struct {
 }
 
 // KType
-func (r ApiGetVehiclesRequest) KType(kType string) ApiGetVehiclesRequest {
+func (r VehicleAPIAPIGetVehiclesRequest) KType(kType string) VehicleAPIAPIGetVehiclesRequest {
 	r.kType = &kType
 	return r
 }
 
 // Model Id
-func (r ApiGetVehiclesRequest) ModelId(modelId string) ApiGetVehiclesRequest {
+func (r VehicleAPIAPIGetVehiclesRequest) ModelId(modelId string) VehicleAPIAPIGetVehiclesRequest {
 	r.modelId = &modelId
 	return r
 }
 
-func (r ApiGetVehiclesRequest) Execute() ([]VehicleReferenceX, *http.Response, error) {
+func (r VehicleAPIAPIGetVehiclesRequest) Execute() ([]VehicleReferenceX, *http.Response, error) {
 	return r.ApiService.GetVehiclesExecute(r)
 }
 
@@ -51,10 +51,10 @@ GetVehicles Vehicles
 Get available vehicles based on a Ktype
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetVehiclesRequest
+ @return VehicleAPIAPIGetVehiclesRequest
 */
-func (a *VehicleAPIAPIService) GetVehicles(ctx context.Context) ApiGetVehiclesRequest {
-	return ApiGetVehiclesRequest{
+func (a *VehicleAPIAPIService) GetVehicles(ctx context.Context) VehicleAPIAPIGetVehiclesRequest {
+	return VehicleAPIAPIGetVehiclesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -62,7 +62,7 @@ func (a *VehicleAPIAPIService) GetVehicles(ctx context.Context) ApiGetVehiclesRe
 
 // Execute executes the request
 //  @return []VehicleReferenceX
-func (a *VehicleAPIAPIService) GetVehiclesExecute(r ApiGetVehiclesRequest) ([]VehicleReferenceX, *http.Response, error) {
+func (a *VehicleAPIAPIService) GetVehiclesExecute(r VehicleAPIAPIGetVehiclesRequest) ([]VehicleReferenceX, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

@@ -22,7 +22,7 @@ import (
 // RepairTimesAPIService RepairTimesAPI service
 type RepairTimesAPIService service
 
-type ApiRepairTimes1treeRequest struct {
+type RepairTimesAPIRepairTimes1treeRequest struct {
 	ctx context.Context
 	ApiService *RepairTimesAPIService
 	kType *string
@@ -30,18 +30,18 @@ type ApiRepairTimes1treeRequest struct {
 }
 
 // KType
-func (r ApiRepairTimes1treeRequest) KType(kType string) ApiRepairTimes1treeRequest {
+func (r RepairTimesAPIRepairTimes1treeRequest) KType(kType string) RepairTimesAPIRepairTimes1treeRequest {
 	r.kType = &kType
 	return r
 }
 
 // Two characters defining the language code; allowed values: de, en, nl, zh, it, hu, hr, fr, fi, es, el, tr, da, sv, sk, cs, ru, ro, pt, pl
-func (r ApiRepairTimes1treeRequest) Language(language string) ApiRepairTimes1treeRequest {
+func (r RepairTimesAPIRepairTimes1treeRequest) Language(language string) RepairTimesAPIRepairTimes1treeRequest {
 	r.language = &language
 	return r
 }
 
-func (r ApiRepairTimes1treeRequest) Execute() (*RepairTimesTreeResponse, *http.Response, error) {
+func (r RepairTimesAPIRepairTimes1treeRequest) Execute() (*RepairTimesTreeResponse, *http.Response, error) {
 	return r.ApiService.RepairTimes1treeExecute(r)
 }
 
@@ -51,10 +51,10 @@ RepairTimes1tree Get repair times tree
 Returns category tree for repair times for a specified vehicle.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRepairTimes1treeRequest
+ @return RepairTimesAPIRepairTimes1treeRequest
 */
-func (a *RepairTimesAPIService) RepairTimes1tree(ctx context.Context) ApiRepairTimes1treeRequest {
-	return ApiRepairTimes1treeRequest{
+func (a *RepairTimesAPIService) RepairTimes1tree(ctx context.Context) RepairTimesAPIRepairTimes1treeRequest {
+	return RepairTimesAPIRepairTimes1treeRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -62,7 +62,7 @@ func (a *RepairTimesAPIService) RepairTimes1tree(ctx context.Context) ApiRepairT
 
 // Execute executes the request
 //  @return RepairTimesTreeResponse
-func (a *RepairTimesAPIService) RepairTimes1treeExecute(r ApiRepairTimes1treeRequest) (*RepairTimesTreeResponse, *http.Response, error) {
+func (a *RepairTimesAPIService) RepairTimes1treeExecute(r RepairTimesAPIRepairTimes1treeRequest) (*RepairTimesTreeResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -143,7 +143,7 @@ func (a *RepairTimesAPIService) RepairTimes1treeExecute(r ApiRepairTimes1treeReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRepairTimes2detailsRequest struct {
+type RepairTimesAPIRepairTimes2detailsRequest struct {
 	ctx context.Context
 	ApiService *RepairTimesAPIService
 	kType *string
@@ -154,36 +154,36 @@ type ApiRepairTimes2detailsRequest struct {
 }
 
 // KType
-func (r ApiRepairTimes2detailsRequest) KType(kType string) ApiRepairTimes2detailsRequest {
+func (r RepairTimesAPIRepairTimes2detailsRequest) KType(kType string) RepairTimesAPIRepairTimes2detailsRequest {
 	r.kType = &kType
 	return r
 }
 
 // Two characters defining the language code; allowed values: de, en, nl, zh, it, hu, hr, fr, fi, es, el, tr, da, sv, sk, cs, ru, ro, pt, pl
-func (r ApiRepairTimes2detailsRequest) Language(language string) ApiRepairTimes2detailsRequest {
+func (r RepairTimesAPIRepairTimes2detailsRequest) Language(language string) RepairTimesAPIRepairTimes2detailsRequest {
 	r.language = &language
 	return r
 }
 
 // The id of the desired category, as describe in the /tree endpoint.  A valid combination of query parameters can be: - categoryId &amp; subCategoryId - categoryId &amp; subCategoryId &amp; genericArticleNo - categoryId &amp; genericArticleNo - genericArticleNo
-func (r ApiRepairTimes2detailsRequest) CategoryId(categoryId string) ApiRepairTimes2detailsRequest {
+func (r RepairTimesAPIRepairTimes2detailsRequest) CategoryId(categoryId string) RepairTimesAPIRepairTimes2detailsRequest {
 	r.categoryId = &categoryId
 	return r
 }
 
 // The id of the desired sub category, as describe in the /tree endpoint.  A valid combination of query parameters can be: - categoryId &amp; subCategoryId - categoryId &amp; subCategoryId &amp; genericArticleNo - categoryId &amp; genericArticleNo - genericArticleNo
-func (r ApiRepairTimes2detailsRequest) SubCategoryId(subCategoryId string) ApiRepairTimes2detailsRequest {
+func (r RepairTimesAPIRepairTimes2detailsRequest) SubCategoryId(subCategoryId string) RepairTimesAPIRepairTimes2detailsRequest {
 	r.subCategoryId = &subCategoryId
 	return r
 }
 
 // The number of the generic article number (spare part/component) to get specific repair time jobs related to the component.  A valid combination of query parameters can be: - categoryId &amp; subCategoryId - categoryId &amp; subCategoryId &amp; genericArticleNo - categoryId &amp; genericArticleNo - genericArticleNo
-func (r ApiRepairTimes2detailsRequest) GenericArticleNo(genericArticleNo string) ApiRepairTimes2detailsRequest {
+func (r RepairTimesAPIRepairTimes2detailsRequest) GenericArticleNo(genericArticleNo string) RepairTimesAPIRepairTimes2detailsRequest {
 	r.genericArticleNo = &genericArticleNo
 	return r
 }
 
-func (r ApiRepairTimes2detailsRequest) Execute() (*RepairTimesJobResponse, *http.Response, error) {
+func (r RepairTimesAPIRepairTimes2detailsRequest) Execute() (*RepairTimesJobResponse, *http.Response, error) {
 	return r.ApiService.RepairTimes2detailsExecute(r)
 }
 
@@ -193,10 +193,10 @@ RepairTimes2details Get repair times details
 Returns all jobs and their repair times for a specified vehicle.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRepairTimes2detailsRequest
+ @return RepairTimesAPIRepairTimes2detailsRequest
 */
-func (a *RepairTimesAPIService) RepairTimes2details(ctx context.Context) ApiRepairTimes2detailsRequest {
-	return ApiRepairTimes2detailsRequest{
+func (a *RepairTimesAPIService) RepairTimes2details(ctx context.Context) RepairTimesAPIRepairTimes2detailsRequest {
+	return RepairTimesAPIRepairTimes2detailsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -204,7 +204,7 @@ func (a *RepairTimesAPIService) RepairTimes2details(ctx context.Context) ApiRepa
 
 // Execute executes the request
 //  @return RepairTimesJobResponse
-func (a *RepairTimesAPIService) RepairTimes2detailsExecute(r ApiRepairTimes2detailsRequest) (*RepairTimesJobResponse, *http.Response, error) {
+func (a *RepairTimesAPIService) RepairTimes2detailsExecute(r RepairTimesAPIRepairTimes2detailsRequest) (*RepairTimesJobResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

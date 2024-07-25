@@ -23,19 +23,19 @@ import (
 // WiringDiagramsImageAPIAPIService WiringDiagramsImageAPIAPI service
 type WiringDiagramsImageAPIAPIService service
 
-type ApiImage2WiringDiagramsRequest struct {
+type WiringDiagramsImageAPIAPIImage2WiringDiagramsRequest struct {
 	ctx context.Context
 	ApiService *WiringDiagramsImageAPIAPIService
 	diagramId *string
 }
 
 // Diagram Id
-func (r ApiImage2WiringDiagramsRequest) DiagramId(diagramId string) ApiImage2WiringDiagramsRequest {
+func (r WiringDiagramsImageAPIAPIImage2WiringDiagramsRequest) DiagramId(diagramId string) WiringDiagramsImageAPIAPIImage2WiringDiagramsRequest {
 	r.diagramId = &diagramId
 	return r
 }
 
-func (r ApiImage2WiringDiagramsRequest) Execute() (*os.File, *http.Response, error) {
+func (r WiringDiagramsImageAPIAPIImage2WiringDiagramsRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.Image2WiringDiagramsExecute(r)
 }
 
@@ -45,10 +45,10 @@ Image2WiringDiagrams Get image wiring-diagrams
 The Image API for wiring-diagrams serves as complement API to the "Wiring Diagrams Diagram API" and returns an image based on an diagramId.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiImage2WiringDiagramsRequest
+ @return WiringDiagramsImageAPIAPIImage2WiringDiagramsRequest
 */
-func (a *WiringDiagramsImageAPIAPIService) Image2WiringDiagrams(ctx context.Context) ApiImage2WiringDiagramsRequest {
-	return ApiImage2WiringDiagramsRequest{
+func (a *WiringDiagramsImageAPIAPIService) Image2WiringDiagrams(ctx context.Context) WiringDiagramsImageAPIAPIImage2WiringDiagramsRequest {
+	return WiringDiagramsImageAPIAPIImage2WiringDiagramsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -56,7 +56,7 @@ func (a *WiringDiagramsImageAPIAPIService) Image2WiringDiagrams(ctx context.Cont
 
 // Execute executes the request
 //  @return *os.File
-func (a *WiringDiagramsImageAPIAPIService) Image2WiringDiagramsExecute(r ApiImage2WiringDiagramsRequest) (*os.File, *http.Response, error) {
+func (a *WiringDiagramsImageAPIAPIService) Image2WiringDiagramsExecute(r WiringDiagramsImageAPIAPIImage2WiringDiagramsRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

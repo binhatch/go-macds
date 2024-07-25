@@ -22,7 +22,7 @@ import (
 // ManufacturerCampaignsAPIService ManufacturerCampaignsAPI service
 type ManufacturerCampaignsAPIService service
 
-type ApiManufacturerCampaigns1treeRequest struct {
+type ManufacturerCampaignsAPIManufacturerCampaigns1treeRequest struct {
 	ctx context.Context
 	ApiService *ManufacturerCampaignsAPIService
 	kType *string
@@ -31,24 +31,24 @@ type ApiManufacturerCampaigns1treeRequest struct {
 }
 
 // KType
-func (r ApiManufacturerCampaigns1treeRequest) KType(kType string) ApiManufacturerCampaigns1treeRequest {
+func (r ManufacturerCampaignsAPIManufacturerCampaigns1treeRequest) KType(kType string) ManufacturerCampaignsAPIManufacturerCampaigns1treeRequest {
 	r.kType = &kType
 	return r
 }
 
 // Two characters defining the language code; allowed values: de, en, nl, zh, it, hu, hr, fr, fi, es, el, tr, da, sv, sk, cs, ru, ro, pt, pl
-func (r ApiManufacturerCampaigns1treeRequest) Language(language string) ApiManufacturerCampaigns1treeRequest {
+func (r ManufacturerCampaignsAPIManufacturerCampaigns1treeRequest) Language(language string) ManufacturerCampaignsAPIManufacturerCampaigns1treeRequest {
 	r.language = &language
 	return r
 }
 
 // Two characters defining the ISO country code
-func (r ApiManufacturerCampaigns1treeRequest) Country(country string) ApiManufacturerCampaigns1treeRequest {
+func (r ManufacturerCampaignsAPIManufacturerCampaigns1treeRequest) Country(country string) ManufacturerCampaignsAPIManufacturerCampaigns1treeRequest {
 	r.country = &country
 	return r
 }
 
-func (r ApiManufacturerCampaigns1treeRequest) Execute() ([]MainGroup, *http.Response, error) {
+func (r ManufacturerCampaignsAPIManufacturerCampaigns1treeRequest) Execute() ([]MainGroup, *http.Response, error) {
 	return r.ApiService.ManufacturerCampaigns1treeExecute(r)
 }
 
@@ -58,10 +58,10 @@ ManufacturerCampaigns1tree Get manufacturer campaigns manual tree
 Get the tree of the manufacturer campaigns manuals of a given vehicle.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiManufacturerCampaigns1treeRequest
+ @return ManufacturerCampaignsAPIManufacturerCampaigns1treeRequest
 */
-func (a *ManufacturerCampaignsAPIService) ManufacturerCampaigns1tree(ctx context.Context) ApiManufacturerCampaigns1treeRequest {
-	return ApiManufacturerCampaigns1treeRequest{
+func (a *ManufacturerCampaignsAPIService) ManufacturerCampaigns1tree(ctx context.Context) ManufacturerCampaignsAPIManufacturerCampaigns1treeRequest {
+	return ManufacturerCampaignsAPIManufacturerCampaigns1treeRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -69,7 +69,7 @@ func (a *ManufacturerCampaignsAPIService) ManufacturerCampaigns1tree(ctx context
 
 // Execute executes the request
 //  @return []MainGroup
-func (a *ManufacturerCampaignsAPIService) ManufacturerCampaigns1treeExecute(r ApiManufacturerCampaigns1treeRequest) ([]MainGroup, *http.Response, error) {
+func (a *ManufacturerCampaignsAPIService) ManufacturerCampaigns1treeExecute(r ManufacturerCampaignsAPIManufacturerCampaigns1treeRequest) ([]MainGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -154,7 +154,7 @@ func (a *ManufacturerCampaignsAPIService) ManufacturerCampaigns1treeExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiManufacturerCampaigns2manualRequest struct {
+type ManufacturerCampaignsAPIManufacturerCampaigns2manualRequest struct {
 	ctx context.Context
 	ApiService *ManufacturerCampaignsAPIService
 	kType *string
@@ -168,54 +168,54 @@ type ApiManufacturerCampaigns2manualRequest struct {
 }
 
 // KType
-func (r ApiManufacturerCampaigns2manualRequest) KType(kType string) ApiManufacturerCampaigns2manualRequest {
+func (r ManufacturerCampaignsAPIManufacturerCampaigns2manualRequest) KType(kType string) ManufacturerCampaignsAPIManufacturerCampaigns2manualRequest {
 	r.kType = &kType
 	return r
 }
 
 // Two characters defining the language code; allowed values: de, en, nl, zh, it, hu, hr, fr, fi, es, el, tr, da, sv, sk, cs, ru, ro, pt, pl
-func (r ApiManufacturerCampaigns2manualRequest) Language(language string) ApiManufacturerCampaigns2manualRequest {
+func (r ManufacturerCampaignsAPIManufacturerCampaigns2manualRequest) Language(language string) ManufacturerCampaignsAPIManufacturerCampaigns2manualRequest {
 	r.language = &language
 	return r
 }
 
 // Two characters defining the ISO country code
-func (r ApiManufacturerCampaigns2manualRequest) Country(country string) ApiManufacturerCampaigns2manualRequest {
+func (r ManufacturerCampaignsAPIManufacturerCampaigns2manualRequest) Country(country string) ManufacturerCampaignsAPIManufacturerCampaigns2manualRequest {
 	r.country = &country
 	return r
 }
 
 // Main Group
-func (r ApiManufacturerCampaigns2manualRequest) MainGroup(mainGroup string) ApiManufacturerCampaigns2manualRequest {
+func (r ManufacturerCampaignsAPIManufacturerCampaigns2manualRequest) MainGroup(mainGroup string) ManufacturerCampaignsAPIManufacturerCampaigns2manualRequest {
 	r.mainGroup = &mainGroup
 	return r
 }
 
 // Sub Group
-func (r ApiManufacturerCampaigns2manualRequest) SubGroup(subGroup string) ApiManufacturerCampaigns2manualRequest {
+func (r ManufacturerCampaignsAPIManufacturerCampaigns2manualRequest) SubGroup(subGroup string) ManufacturerCampaignsAPIManufacturerCampaigns2manualRequest {
 	r.subGroup = &subGroup
 	return r
 }
 
 // Manual Group
-func (r ApiManufacturerCampaigns2manualRequest) ManualGroup(manualGroup string) ApiManufacturerCampaigns2manualRequest {
+func (r ManufacturerCampaignsAPIManufacturerCampaigns2manualRequest) ManualGroup(manualGroup string) ManufacturerCampaignsAPIManufacturerCampaigns2manualRequest {
 	r.manualGroup = &manualGroup
 	return r
 }
 
 // Manual
-func (r ApiManufacturerCampaigns2manualRequest) Manual(manual string) ApiManufacturerCampaigns2manualRequest {
+func (r ManufacturerCampaignsAPIManufacturerCampaigns2manualRequest) Manual(manual string) ManufacturerCampaignsAPIManufacturerCampaigns2manualRequest {
 	r.manual = &manual
 	return r
 }
 
 // Qualifier
-func (r ApiManufacturerCampaigns2manualRequest) Qualifier(qualifier string) ApiManufacturerCampaigns2manualRequest {
+func (r ManufacturerCampaignsAPIManufacturerCampaigns2manualRequest) Qualifier(qualifier string) ManufacturerCampaignsAPIManufacturerCampaigns2manualRequest {
 	r.qualifier = &qualifier
 	return r
 }
 
-func (r ApiManufacturerCampaigns2manualRequest) Execute() (*TecManual, *http.Response, error) {
+func (r ManufacturerCampaignsAPIManufacturerCampaigns2manualRequest) Execute() (*TecManual, *http.Response, error) {
 	return r.ApiService.ManufacturerCampaigns2manualExecute(r)
 }
 
@@ -225,10 +225,10 @@ ManufacturerCampaigns2manual Get manufacturer campaigns manual
 Get a list of proactive actions by the manufacturer when malfunctions are detected concerning certain models.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiManufacturerCampaigns2manualRequest
+ @return ManufacturerCampaignsAPIManufacturerCampaigns2manualRequest
 */
-func (a *ManufacturerCampaignsAPIService) ManufacturerCampaigns2manual(ctx context.Context) ApiManufacturerCampaigns2manualRequest {
-	return ApiManufacturerCampaigns2manualRequest{
+func (a *ManufacturerCampaignsAPIService) ManufacturerCampaigns2manual(ctx context.Context) ManufacturerCampaignsAPIManufacturerCampaigns2manualRequest {
+	return ManufacturerCampaignsAPIManufacturerCampaigns2manualRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -236,7 +236,7 @@ func (a *ManufacturerCampaignsAPIService) ManufacturerCampaigns2manual(ctx conte
 
 // Execute executes the request
 //  @return TecManual
-func (a *ManufacturerCampaignsAPIService) ManufacturerCampaigns2manualExecute(r ApiManufacturerCampaigns2manualRequest) (*TecManual, *http.Response, error) {
+func (a *ManufacturerCampaignsAPIService) ManufacturerCampaigns2manualExecute(r ManufacturerCampaignsAPIManufacturerCampaigns2manualRequest) (*TecManual, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

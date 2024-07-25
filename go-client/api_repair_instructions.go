@@ -22,7 +22,7 @@ import (
 // RepairInstructionsAPIService RepairInstructionsAPI service
 type RepairInstructionsAPIService service
 
-type ApiRepairInstructions1treeRequest struct {
+type RepairInstructionsAPIRepairInstructions1treeRequest struct {
 	ctx context.Context
 	ApiService *RepairInstructionsAPIService
 	kType *string
@@ -31,24 +31,24 @@ type ApiRepairInstructions1treeRequest struct {
 }
 
 // KType
-func (r ApiRepairInstructions1treeRequest) KType(kType string) ApiRepairInstructions1treeRequest {
+func (r RepairInstructionsAPIRepairInstructions1treeRequest) KType(kType string) RepairInstructionsAPIRepairInstructions1treeRequest {
 	r.kType = &kType
 	return r
 }
 
 // Two characters defining the language code; allowed values: de, en, nl, zh, it, hu, hr, fr, fi, es, el, tr, da, sv, sk, cs, ru, ro, pt, pl
-func (r ApiRepairInstructions1treeRequest) Language(language string) ApiRepairInstructions1treeRequest {
+func (r RepairInstructionsAPIRepairInstructions1treeRequest) Language(language string) RepairInstructionsAPIRepairInstructions1treeRequest {
 	r.language = &language
 	return r
 }
 
 // Two characters defining the ISO country code
-func (r ApiRepairInstructions1treeRequest) Country(country string) ApiRepairInstructions1treeRequest {
+func (r RepairInstructionsAPIRepairInstructions1treeRequest) Country(country string) RepairInstructionsAPIRepairInstructions1treeRequest {
 	r.country = &country
 	return r
 }
 
-func (r ApiRepairInstructions1treeRequest) Execute() ([]MainGroup, *http.Response, error) {
+func (r RepairInstructionsAPIRepairInstructions1treeRequest) Execute() ([]MainGroup, *http.Response, error) {
 	return r.ApiService.RepairInstructions1treeExecute(r)
 }
 
@@ -58,10 +58,10 @@ RepairInstructions1tree Get repair instructions manuals tree
 Get the tree of the repair instructions manuals of a given vehicle.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRepairInstructions1treeRequest
+ @return RepairInstructionsAPIRepairInstructions1treeRequest
 */
-func (a *RepairInstructionsAPIService) RepairInstructions1tree(ctx context.Context) ApiRepairInstructions1treeRequest {
-	return ApiRepairInstructions1treeRequest{
+func (a *RepairInstructionsAPIService) RepairInstructions1tree(ctx context.Context) RepairInstructionsAPIRepairInstructions1treeRequest {
+	return RepairInstructionsAPIRepairInstructions1treeRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -69,7 +69,7 @@ func (a *RepairInstructionsAPIService) RepairInstructions1tree(ctx context.Conte
 
 // Execute executes the request
 //  @return []MainGroup
-func (a *RepairInstructionsAPIService) RepairInstructions1treeExecute(r ApiRepairInstructions1treeRequest) ([]MainGroup, *http.Response, error) {
+func (a *RepairInstructionsAPIService) RepairInstructions1treeExecute(r RepairInstructionsAPIRepairInstructions1treeRequest) ([]MainGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -154,7 +154,7 @@ func (a *RepairInstructionsAPIService) RepairInstructions1treeExecute(r ApiRepai
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRepairInstructions2manualRequest struct {
+type RepairInstructionsAPIRepairInstructions2manualRequest struct {
 	ctx context.Context
 	ApiService *RepairInstructionsAPIService
 	kType *string
@@ -168,54 +168,54 @@ type ApiRepairInstructions2manualRequest struct {
 }
 
 // KType
-func (r ApiRepairInstructions2manualRequest) KType(kType string) ApiRepairInstructions2manualRequest {
+func (r RepairInstructionsAPIRepairInstructions2manualRequest) KType(kType string) RepairInstructionsAPIRepairInstructions2manualRequest {
 	r.kType = &kType
 	return r
 }
 
 // Two characters defining the language code; allowed values: de, en, nl, zh, it, hu, hr, fr, fi, es, el, tr, da, sv, sk, cs, ru, ro, pt, pl
-func (r ApiRepairInstructions2manualRequest) Language(language string) ApiRepairInstructions2manualRequest {
+func (r RepairInstructionsAPIRepairInstructions2manualRequest) Language(language string) RepairInstructionsAPIRepairInstructions2manualRequest {
 	r.language = &language
 	return r
 }
 
 // Two characters defining the ISO country code
-func (r ApiRepairInstructions2manualRequest) Country(country string) ApiRepairInstructions2manualRequest {
+func (r RepairInstructionsAPIRepairInstructions2manualRequest) Country(country string) RepairInstructionsAPIRepairInstructions2manualRequest {
 	r.country = &country
 	return r
 }
 
 // Main Group
-func (r ApiRepairInstructions2manualRequest) MainGroup(mainGroup string) ApiRepairInstructions2manualRequest {
+func (r RepairInstructionsAPIRepairInstructions2manualRequest) MainGroup(mainGroup string) RepairInstructionsAPIRepairInstructions2manualRequest {
 	r.mainGroup = &mainGroup
 	return r
 }
 
 // Sub Group
-func (r ApiRepairInstructions2manualRequest) SubGroup(subGroup string) ApiRepairInstructions2manualRequest {
+func (r RepairInstructionsAPIRepairInstructions2manualRequest) SubGroup(subGroup string) RepairInstructionsAPIRepairInstructions2manualRequest {
 	r.subGroup = &subGroup
 	return r
 }
 
 // Manual Group
-func (r ApiRepairInstructions2manualRequest) ManualGroup(manualGroup string) ApiRepairInstructions2manualRequest {
+func (r RepairInstructionsAPIRepairInstructions2manualRequest) ManualGroup(manualGroup string) RepairInstructionsAPIRepairInstructions2manualRequest {
 	r.manualGroup = &manualGroup
 	return r
 }
 
 // Manual
-func (r ApiRepairInstructions2manualRequest) Manual(manual string) ApiRepairInstructions2manualRequest {
+func (r RepairInstructionsAPIRepairInstructions2manualRequest) Manual(manual string) RepairInstructionsAPIRepairInstructions2manualRequest {
 	r.manual = &manual
 	return r
 }
 
 // Qualifier
-func (r ApiRepairInstructions2manualRequest) Qualifier(qualifier string) ApiRepairInstructions2manualRequest {
+func (r RepairInstructionsAPIRepairInstructions2manualRequest) Qualifier(qualifier string) RepairInstructionsAPIRepairInstructions2manualRequest {
 	r.qualifier = &qualifier
 	return r
 }
 
-func (r ApiRepairInstructions2manualRequest) Execute() (*TecManual, *http.Response, error) {
+func (r RepairInstructionsAPIRepairInstructions2manualRequest) Execute() (*TecManual, *http.Response, error) {
 	return r.ApiService.RepairInstructions2manualExecute(r)
 }
 
@@ -225,10 +225,10 @@ RepairInstructions2manual Get repair instructions manual
 Get available repair instructions manual of a given vehicle.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRepairInstructions2manualRequest
+ @return RepairInstructionsAPIRepairInstructions2manualRequest
 */
-func (a *RepairInstructionsAPIService) RepairInstructions2manual(ctx context.Context) ApiRepairInstructions2manualRequest {
-	return ApiRepairInstructions2manualRequest{
+func (a *RepairInstructionsAPIService) RepairInstructions2manual(ctx context.Context) RepairInstructionsAPIRepairInstructions2manualRequest {
+	return RepairInstructionsAPIRepairInstructions2manualRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -236,7 +236,7 @@ func (a *RepairInstructionsAPIService) RepairInstructions2manual(ctx context.Con
 
 // Execute executes the request
 //  @return TecManual
-func (a *RepairInstructionsAPIService) RepairInstructions2manualExecute(r ApiRepairInstructions2manualRequest) (*TecManual, *http.Response, error) {
+func (a *RepairInstructionsAPIService) RepairInstructions2manualExecute(r RepairInstructionsAPIRepairInstructions2manualRequest) (*TecManual, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
