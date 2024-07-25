@@ -1,1 +1,2 @@
 packageName: "gomacds"
+structPrefix: true
